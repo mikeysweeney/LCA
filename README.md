@@ -4,6 +4,4 @@ Implement a function that can calculate the lowest common ancestor in a graph, t
 
 Due 14th October
 
-**ToDo Testing
-
-Software used Atom
+Software used: Atom
