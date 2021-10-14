@@ -22,16 +22,5 @@ class TestLCA(unittest.TestCase):
         self.assertEqual(LCA.findLCA(self.root, 4, 8), None, "LCA(4, 5) should be None")
         self.assertEqual(LCA.findLCA(self.root, 8, 4), None, "LCA(8, 4) should be None")
 
-    def test_findLCA_DAG(self):
-        graph = LCA.nx.DiGraph()
-        graph.add_edges_from([(1, 2), (1, 3), (1, 4), (1, 5), (2, 4), (3, 4), (3, 5), (4, 5)])
-
-        self.assertEqual(LCA.nx.lowest_common_ancestor(graph, 2, 3), 1, "LCA_DAG(2, 3) should be 1")
-        self.assertEqual(LCA.nx.lowest_common_ancestor(graph, 2, 5), 2, "LCA_DAG(2, 3) should be 1")
-        self.assertEqual(LCA.nx.lowest_common_ancestor(graph, 1, 4), 1, "LCA_DAG(2, 3) should be 1")
-        self.assertEqual(LCA.nx.lowest_common_ancestor(graph, 4, 5), 4, "LCA_DAG(2, 3) should be 1")
-
-        #self.assertRaises(LCA.nx.NodeNotFound("The node 6 is not in the digraph."), LCA.nx.lowest_common_ancestor(graph, 2, 6))
-
 if __name__ == '__main__':
     unittest.main()
