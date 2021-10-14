@@ -1,12 +1,19 @@
+/*example to visualize
+           4
+         /   \
+        2      6
+       / \    / \
+      1   3  5   7
+*/
 import java.util.ArrayList;
 class Node {
 		int data;
-		Node leftside, rightside;
+		Node left, right;
 		ArrayList<Node> lcancestors;
 
 		Node(int value) {
 			data = value;
-			leftside = rightside = null;
+			left = right = null;
 			lcancestors = null;
 		}
 	}
@@ -24,14 +31,14 @@ public class LCA {
 			return null;
 		else if (node.data == n1 || node.data == n2)
 			return node;
-		Node leftside = findLCA(node.leftside, n1, n2);
-		Node rightside = findLCA(node.rightside, n1, n2);
-		if (leftside != null && rightside != null)
+		Node left = findLCA(node.left, n1, n2);
+		Node right = findLCA(node.right, n1, n2);
+		if (left != null && right != null)
 			return node;
-		else if (leftside != null)
-			return leftside;
+		else if (left != null)
+			return left;
 		else
-			return rightside;
+			return right;
 	}
 
 	public void addlcancestorsToNode(Node nodeA, Node nodeB) {
