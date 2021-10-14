@@ -92,19 +92,4 @@ public class LCATest {
 		assertEquals("LCA of 13 and 14", 3, tree.findLCA(13, 14).data);
 		assertEquals("LCA of 15 and 1", 1, tree.findLCA(15, 1).data);
 	}
-
-	@Test
-	public void testEmptyGraph() {
-		LCA DAGtree = new LCA();
-		assertEquals(null, DAGtree.findLCADAG(null, null, null));
-	}
-
-	@Test
-	public void testNolcancestors() {
-		LCA DAGtree = new LCA();
-		Node node1 = new Node(1);
-		Node node2 = new Node(2);
-
-		assertEquals(null, DAGtree.findLCADAG(node1, node2));
-	}
 }

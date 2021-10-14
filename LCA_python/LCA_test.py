@@ -1,7 +1,7 @@
 import unittest
 import LCA
 
-class TestLCA(unittest.TestCase):
+class LCATest(unittest.TestCase):
 
     def setUp(self):
         self.root = LCA.Node(4)
@@ -11,7 +11,7 @@ class TestLCA(unittest.TestCase):
         self.root.left.right = LCA.Node(3)
         self.root.right.left = LCA.Node(5)
         self.root.right.right = LCA.Node(7)
-        
+
 
     def test_findLCA(self):
 
