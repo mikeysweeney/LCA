@@ -1,9 +1,15 @@
+#example to visualize
+#           4
+#         /   \
+#        2      6
+#       / \    / \
+#      1   3  5   7
 import unittest
 import LCA
 
 class LCATest(unittest.TestCase):
 
-    def setUp(self):
+    def testLCA(self):
         self.root = LCA.Node(4)
         self.root.left = LCA.Node(2)
         self.root.right = LCA.Node(6)
@@ -22,6 +28,9 @@ class LCATest(unittest.TestCase):
 
         self.assertEqual(LCA.findLCA(self.root, 4, 8), None, "LCA(4, 5) should be None")
         self.assertEqual(LCA.findLCA(self.root, 8, 4), None, "LCA(8, 4) should be None")
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
